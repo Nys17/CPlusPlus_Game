@@ -2,7 +2,8 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "Just a game"); /// add later sf::Style::Fullscreen
+    window.setVerticalSyncEnabled(true);/// match fps with monitor refresh rate
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
