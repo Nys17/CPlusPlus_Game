@@ -140,10 +140,12 @@
     <ClCompile Include="source\EntryPoint\WinMain.cpp" />
     <ClCompile Include="source\Game\Character.cpp" />
     <ClCompile Include="source\Game\GameManager.cpp" />
+    <ClCompile Include="source\Game\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Game\Character.h" />
     <ClInclude Include="source\Game\GameManager.h" />
+    <ClInclude Include="source\Game\Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
