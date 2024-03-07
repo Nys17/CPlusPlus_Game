@@ -138,6 +138,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\EntryPoint\WinMain.cpp" />
+    <ClCompile Include="source\Game\Character.cpp" />
+    <ClCompile Include="source\Game\GameManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Game\Character.h" />
+    <ClInclude Include="source\Game\GameManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

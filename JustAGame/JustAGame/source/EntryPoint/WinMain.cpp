@@ -1,25 +1,48 @@
 #include <SFML/Graphics.hpp>
+#include "../Game/GameManager.h"
+#include <Windows.h>
 
-int main()
+
+
+int CALLBACK main(_In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow)
 {
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Just a game"); /// add later sf::Style::Fullscreen
     window.setVerticalSyncEnabled(true);/// match fps with monitor refresh rate
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
 
-    while (window.isOpen())
+    GameManager manager;
+
+
+
+   if (manager.Load())
     {
-        sf::Event event;
-        while (window.pollEvent(event))
+       sf::Clock clock;
+        while (window.isOpen())
         {
-            if (event.type == sf::Event::Closed)
-                window.close();
+            sf::Event event;
+            while (window.pollEvent(event))
+            {
+                sf::Time frameTime = clock.getElapsedTime();
+
+                clock.restart();
+                window.clear();
+
+                manager.Update(frameTime.asSeconds());
+                manager.Render();
+
+                window.display();
+
+                if (event.type == sf::Event::Closed)
+                    window.close();
+            }
+
+           
+          
+           
         }
 
-        window.clear();
-        window.draw(shape);
-        window.display();
+      
     }
 
+   manager.ShutDown();
     return 0;
 }
