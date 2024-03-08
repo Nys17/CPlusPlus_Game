@@ -1,7 +1,8 @@
 #pragma once
 #include "Character.h"
 
- class Player:Character {
-
+ class Player: public Character {
+ public:
+	 explicit Player(GameManager& manager);
 
 };

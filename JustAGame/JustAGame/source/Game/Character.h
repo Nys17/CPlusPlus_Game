@@ -40,6 +40,8 @@ public:
 	GameManager& GetManager() const { return manager; }
 
 	sf::Sprite& GetSprite() { return sprite; }
+
+	void ApplyDamage(const Character* source, float damage);
 protected:
 	//ovveride for custom event on character being destroyed
 	virtual void OnDestroy() {};

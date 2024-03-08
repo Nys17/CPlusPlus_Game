@@ -16,9 +16,19 @@ void Character::Destroy()
 
 void Character::Update(float t)
 {
+
+	onUpdate(t);
 }
 
 void Character::Render(sf::RenderTexture& renderTex)
 {
 
+}
+
+void Character::ApplyDamage(const Character* source, float damage)
+{
+	onApplyDamage(source, damage);
+
+	currentHealth -= damage;
+	currentHealth = std::min(maxHealth, std::max(currentHealth, 0.0f)); /// clamp	health
 }
